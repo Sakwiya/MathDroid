@@ -1,0 +1,29 @@
+#header,#account_setup,#login_panel,#account_panel,#footer,#balance_panel,#withdraw_panel,#transfer_panel{
+	display: none;
+}
+
+
+/*account setup div*/
+#user_yob,#user_contacts,#user_credentials,#verification_panel,#signup_page,#setup_account{
+	display: none;
+}
+/*.ui.button{
+	border-radius: 50px/50px;
+}*/
+
+#login_page,.page{
+
+	padding-top: 80px
+}
+
+
+
+#header{
+ 	width: 100%;
+ 	position: fixed;
+ 	top:0;
+ 	background:#0DBC45;
+ 	left: 0;
+ 	
+ 	z-index: 1;
+ }

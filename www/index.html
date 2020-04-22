@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title> MathDroid | Kupweketsa Masamu </title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="js/jquery.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"> <!-- normalize css libray -->
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">  <!-- skeleton css libary -->
+    <script src="cordova.js"></script>                               <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="semantic/semantic.min.js"></script> 
+    <script src="js/bootstrap.js"></script>
+    <script src="js/app.js"></script>  
+    <script src="js/database.js"></script> 
+    <script src="js/easymath.js"></script>  
+    <script src="js/getdata.js"></script>                        <!-- recommended location of your JavaScript code relative to other JSfiles -->
+    <script src="xdk/init-dev.js"></script>                
+</head>
+
+<body onload="onloadfunction()">
+
+<div class="tablet only mobile only sixteen wide column">
+
+    <h1 class="ui red header" id="header" style="padding-top: 10px; width: 100%; background-color: white;">
+  <img class="ui image" src="image/girl_and_math_equation_100px.png" id="logo" style="margin-top: -6px">
+   <span > <i class="chevron large left icon" id="back_btn" style="float: left; margin-top: 5px"></i></span>
+    <!-- <span ><i class="search icon"" id="search_btn" style="float: right; margin-top: 5px"></i></span> -->
+<!-- <span id="cart"><img src="image/Shopping48px.png" style="float: right; margin-top: 5px; height: 35px;"><a class="ui red circular label" id="badge">0</a></span> -->
+
+  <div class="content" style="margin-left: 10px;">
+    MathDroid
+  <div class="sub header" id="sub_header">Kupweketsa Masamu</div>
+  </div>
+</h1>
+   
+<section id="home_page">
+
+  <img class="ui centered small image" src="image/girl_and_math_equation_100px.png">
+
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+    <button class="massive red fluid ui button"  onclick="changeView('_4to5yrsold_panel','4 to 5 years old');">Age 4-5 years old</button>
+    <button class="massive red fluid ui button"  onclick="changeView('_6to7yrsold_panel','6 to 7 years old');">Age 6-7 years old</button>
+    <button class="massive red fluid ui button"  onclick="changeView('_8yrsold_panel','8 years old');">Age 8 years old</button>
+</div>
+
+</section>
+
+
+
+<section id="_4to5yrsold_panel">
+
+  <img class="ui centered small image" src="image/girl_and_math_equation_100px.png">
+
+<div class="ui column centered grid" style="margin-left:-2px; padding-bottom: 80px;" id="menu">
+    <!-- <button class="massive red fluid ui button" id="pc" onclick="changeView('addition_panel','Place Value');">Place Value</button>
+    <button class="massive red fluid ui button" id="cell" onclick="changeView('subtraction_panel','Ordinary Numbers');">Ordinary Numbers</button> -->
+    <button class="massive red fluid ui button" id="home" onclick="changeView('addition4to5yrsold_panel','Addition');">Addition</button>
+    <button class="massive red fluid ui button" id="elect" onclick="changeView('subtraction4to5yrsold_panel','Subtraction');">Subtraction</button>
+    <button class="massive red fluid ui button" id="access" onclick="changeView('shapes4to5yrsold_panel','4 to 5 years Shapes');">Shapes</button>
+    <button class="massive red fluid ui button" id="promo" onclick="changeView('countingnumbers4to5yrsold_panel','4 to 6 Counting Number');">Counting Numbers</button>
+    <button class="massive red fluid ui button" id="symbol" onclick="changeView('symbols4to5yrsold_panel','4 to 5 Symbols');">Symbols</button>
+</div>
+
+</section>
+
+
+<section id="_6to7yrsold_panel">
+
+  <img class="ui centered small image" src="image/girl_and_math_equation_100px.png">
+
+<div class="ui column centered grid" style="margin-left:-2px; " id="menu">
+   <!--  <button class="massive red fluid ui button" id="pc" onclick="changeView('addition_panel','Place Value');">Place Value</button>
+    <button class="massive red fluid ui button" id="cell" onclick="changeView('subtraction_panel','Ordinary Numbers');">Ordinary Numbers</button> -->
+    <button class="massive red fluid ui button" id="home" onclick="changeView('addition6to7yrsold_panel','Addition');">Addition</button>
+    <button class="massive red fluid ui button" id="elect" onclick="changeView('subtraction6to7yrsold_panel','Subtraction');">Subtraction</button>
+    <button class="massive red fluid ui button" id="access" onclick="changeView('wordproblem_panel','Multiplication');">Shapes (Congruent Figure)</button>
+    <button class="massive red fluid ui button" id="promo" onclick="changeView('wordproblem_panel','Division');">Odd and Even Numbers</button>
+    <button class="massive red fluid ui button" id="symbol" onclick="changeView('wordproblem_panel','Division');">Comparing numbers using symbols</button>
+    <button class="massive red fluid ui button" id="even" onclick="changeView('wordproblem_panel','Division');">Odd and Even Numbers</button>
+</div>
+
+</section>
+
+
+<section id="_8yrsold_panel">
+
+  <img class="ui centered small image" src="image/girl_and_math_equation_100px.png">
+
+<div class="ui column centered grid" style="margin-left:-2px;" id="menu">
+    <button class="massive red fluid ui button" id="home" onclick="changeView('addition8yrsold_panel','Addition');">Addition</button>
+    <button class="massive red fluid ui button" id="elect" onclick="changeView('subtraction8yrsold_panel','Subtraction');">Subtraction</button>
+    <button class="massive red fluid ui button" id="access" onclick="changeView('multiplication8yrsold_panel','Multiplication');">Multiplication</button>
+    <button class="massive red fluid ui button" id="promo" onclick="changeView('division8yrsold_panel','Division');">Division</button>
+</div>
+
+</section>
+
+
+<!-- 4 TO 6 SHAPE -->
+<div  class="container-fluid" style="padding:.3em; padding-top: 20%;padding-bottom: 15%; " id="shapes4to5yrsold_panel">
+   <strong>The Different Shapes are:</strong>
+<div class="ui divider"></div>
+
+<div class="ui styled fluid accordion">
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>Rectangle</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5shapes/rectangle.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>Square</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5shapes/square.jpg">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>Circle</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5shapes/circle.jpg">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>Triangle</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5shapes/triangle.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>Oblong</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5shapes/oblong.png">
+  </div>
+</div>
+  
+</div>
+<!-- 4 TO 6 SHAPE -->
+
+
+<!-- 4 TO 6 SYMBOLS -->
+<div  class="container-fluid" style="padding:.3em; padding-top: 20%;padding-bottom: 20%; " id="symbols4to5yrsold_panel">
+   <strong>Symbols</strong>
+<div class="ui divider"></div>
+<strong>&gt;</strong> - is the symbol for Greater than
+<div class="ui divider"></div>
+<strong>&lt;</strong> - is the symbol for Less than
+<div class="ui divider"></div>
+<strong>=</strong> - is the symbol for Equal to
+<div class="ui divider"></div>
+<strong>Examples:</strong>
+<div class="ui divider"></div>
+<img class="ui centered image" src="img/4to5symbol/symbol.png">
+<div class="ui divider"></div>
+<!--  -->
+
+</div>
+<!-- 4 TO 6 SYMBOLS -->
+
+
+<!-- 4 to 6 COUNTING NUMBER -->
+
+<div id="countingnumbers4to5yrsold_panel" class="container-fluid" style="padding:.3em; padding-top: 20%;padding-bottom: 15%; ">
+
+      <strong>Lets Count 1</strong>
+<div class="ui divider"></div>
+
+<div class="ui styled fluid accordion">
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>1 (one)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/1.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>2 (two)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/2.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>3 (three)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/3.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>4 (four)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/4.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>5 (five)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/5.png">
+  </div><div class="title">
+    <i class="dropdown icon"></i>
+   <strong>6 (six)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/6.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>7 (seven)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/7.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>8 (eight)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/8.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>9 (nine)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/9.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>10 (ten)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/10.png">
+  </div>
+    <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>11 (eleven)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/11.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>12 (tewlve)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/12.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>13 (thirteen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/13.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>14 (fourteen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/14.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>15 (fifthteen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/15.png">
+  </div><div class="title">
+    <i class="dropdown icon"></i>
+   <strong>16 (sixteen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/16.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>17 (seventeen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/17.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>18 (eighteen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/18.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    <strong>19 (nineteen)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/19.png">
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+   <strong>20 (tewnty)</strong>
+  </div>
+  <div class="content">
+    <img class="ui centered image" src="img/4to5counting/20.png">
+  </div>
+</div>
+  
+</div>
+<!-- 4 to 6 COUNTING NUMBER -->
+
+<!-- ADD8QUIZ -->
+<div id="add8quiz_panel" class="container-fluid" style="padding:.3em; padding-top: 20%;padding-bottom: 15%; ">
+
+<div id="quiz1">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber1">
+   Waiting for question...
+  </div>
+  <p id="question1">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices1">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-1"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-1"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-1"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-1"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick='quizChangeView("quiz2")'>Next</button>
+</div>
+
+  
+</div>
+
+
+
+
+<div id="quiz2" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber2">
+   Waiting for question...
+  </div>
+  <p id="question2">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices2">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-2" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-2"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-2" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-2"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-2" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-2"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-2" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-2"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"  onClick='quizChangeView("quiz3")'>Next</button>
+  <button class="massive blue fluid ui button" onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+<div id="quiz3" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber3">
+   Waiting for question...
+  </div>
+  <p id="question3">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices3">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-3" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-3"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-3" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-3"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-3" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-3"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-3" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-3"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"  onClick='quizChangeView("quiz4")'>Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+<div id="quiz4" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber4">
+   Waiting for question...
+  </div>
+  <p id="question4">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices4">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-4" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-4"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-4" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-4"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-4" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-4"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-4" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-4"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick="quizChangeView('quiz5')">Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+<div id="quiz5" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber5">
+   Waiting for question...
+  </div>
+  <p id="question5">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices5">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-5" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-5"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-5" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-5"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-5" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-5"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-5" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-5"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick="quizChangeView('quiz6')">Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+<div id="quiz6" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber6">
+   Waiting for question...
+  </div>
+  <p id="question6">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices6">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-6" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-6"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-6" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-6"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-6" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-6"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-6" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-6"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick="quizChangeView('quiz7')">Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+
+<div id="quiz7" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber7">
+   Waiting for question...
+  </div>
+  <p id="question7">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices7">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-7" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-7"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-7" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-7"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-7" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-7"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-7" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-7"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick="quizChangeView('quiz8')">Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+
+<div id="quiz8" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber8">
+   Waiting for question...
+  </div>
+  <p id="question8">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices8">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-8" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-8"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-8" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-8"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-8" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-8"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-8" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-8"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick="quizChangeView('quiz9')">Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+<div id="quiz9" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber9">
+   Waiting for question...
+  </div>
+  <p id="question9">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices9">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-9" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-9"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-9" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-9"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-9" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-9"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-9" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-9"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" onClick="quizChangeView('quiz10')">Next</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+
+<div id="quiz10" style="display: none;">
+
+
+<div class="ui message">
+  <div class="header" id="questionnumber10">
+   Waiting for question...
+  </div>
+  <p id="question10">Waiting for question...</p>
+</div>
+
+
+<div class="ui medium form">
+  <div class="grouped fields" id="list_choices10">
+  <!--   <label>How often do you use checkboxes?</label> -->
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-10" id="radio-choice-1" value="choice-1">
+        <label> <b style="font-size: 20px; padding-left: 10px;" id="qanswer1-10"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-10" id="radio-choice-2" value="choice-2">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer2-10"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-10" id="radio-choice-3" value="choice-3">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer3-10"> </b></label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="radio-choice-10" id="radio-choice-4" value="choice-4">
+        <label><b style="font-size: 20px; padding-left: 10px;" id="qanswer4-10"> </b></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button" id="btn_submit_yes" onClick="quizChangeView('results')">Finish</button>
+  <button class="massive blue fluid ui button"onClick="quizChangeViewPrevious()">Previous</button>
+</div>
+
+  
+</div>
+
+
+
+<div id="results" style="display: none;" >
+
+
+<div class="ui message">
+
+ <center><div class="header" id="game_rate"></div></center> 
+ <center><p style="font-size: 20px;"><span id="game_score"> 200 </span>/10</p> </center> 
+</div>
+
+
+<table class="ui unstackable table">
+  <thead>
+    <tr>
+      <th>Question #</th>
+      <th>Your answer</th>
+      <th class="right aligned">Correct Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="res_question_1"></td>
+      <td id="res_your_1"></td>
+      <td class="right aligned" id="res_answer_1"></td>
+    </tr>
+   <tr>
+      <td id="res_question_2"></td>
+      <td id="res_your_2"></td>
+      <td class="right aligned" id="res_answer_2"></td>
+    </tr>
+   <tr>
+      <td id="res_question_3"></td>
+      <td id="res_your_3"></td>
+      <td class="right aligned" id="res_answer_3"></td>
+    </tr>
+    <tr>
+      <td id="res_question_4"></td>
+      <td id="res_your_4"></td>
+      <td class="right aligned" id="res_answer_4"></td>
+    </tr>
+   <tr>
+      <td id="res_question_5"></td>
+      <td id="res_your_5"></td>
+      <td class="right aligned" id="res_answer_5"></td>
+    </tr>
+   <tr>
+      <td id="res_question_6"></td>
+      <td id="res_your_6"></td>
+      <td class="right aligned" id="res_answer_6"></td>
+    </tr> <tr>
+      <td id="res_question_7"></td>
+      <td id="res_your_7"></td>
+      <td class="right aligned" id="res_answer_7"></td>
+    </tr>
+   <tr>
+      <td id="res_question_8"></td>
+      <td id="res_your_8"></td>
+      <td class="right aligned" id="res_answer_8"></td>
+    </tr>
+   <tr>
+      <td id="res_question_9"></td>
+      <td id="res_your_9"></td>
+      <td class="right aligned" id="res_answer_9"></td>
+    </tr>
+    <tr>
+      <td id="res_question_10"></td>
+      <td id="res_your_10"></td>
+      <td class="right aligned" id="res_answer_10"></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<!-- <div class="ui divider"></div> -->
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive green fluid ui button" onClick="gameload('add8quiz','Multiple Choice')">Try again</button>
+  <button class="massive blue fluid ui button" onClick="previousBtn()">Home</button>
+  <!-- <button class="massive red fluid ui button" onClick="previousBtn()">Quit</button> -->
+</div>
+
+  
+</div>
+
+
+
+
+</div>
+<!-- ADD8QUIZ -->
+
+
+<!-- 4-5 YEARS ADDITION PANEL -->
+<section id="addition4to5yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Addition means putting objects together. Plus sign (+) is used in addition.</P>
+<div class="ui divider"></div>
+  <strong>Example:</strong>
+<div class="ui divider"></div>
+
+<img class="ui centered image" src="img/4to5addition/addition.png">
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('add4to5quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 4-5 YEARS ADDITION PANEL -->
+
+
+<!-- 4-5 YEARS SUBTRACTION PANEL -->
+<section id="subtraction4to5yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Subtraction means taking away small number from a bigger, (-) is the symbol of subtraction.</P>
+<div class="ui divider"></div>
+  <strong>Example:</strong>
+<div class="ui divider"></div>
+
+<img class="ui centered image" src="img/4to5subtraction/subtraction.png">
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('sub4to5quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 4-5 YEARS SUBTRACTION PANEL -->
+
+
+<!-- 4-5 YEARS MULTIPLICATION PANEL -->
+<!-- <section id="multiplication4to5yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Subtraction means taking away small number from a bigger, (-) is the symbol of subtraction.</P>
+<div class="ui divider"></div>
+  <strong>Example:</strong>
+<div class="ui divider"></div>
+
+<img class="ui centered image" src="img/4to5subtraction/subtraction.png">
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('sub4to5quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section> -->
+<!-- 4-5 YEARS MULIPLICATION PANEL -->
+
+
+
+<!-- 6-7 YEARS SUBTRACTION PANEL -->
+<section id="subtraction6to7yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Subtraction is used to compare the number of elements of a set with tWhen you add the e number of elements of another set.</P>
+<div class="ui divider"></div>
+  <strong>Example:</strong>
+<div class="ui divider"></div>
+
+<img class="ui centered image" src="img/6to7subtraction/subtract.png">
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('sub6to7quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 6-7 YEARS SUBTRACTION PANEL -->
+
+
+
+<!-- 6-7 YEARS ADDITION PANEL -->
+<section id="addition6to7yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Congruent figures are figures with exactly the same size and shapes</P>
+<div class="ui divider"></div>
+<strong>When you add the two digit numbers align digits of the same place value from the addends to the sum.</strong>
+<div class="ui divider"></div>
+  <strong>Example:</strong>
+<div class="ui divider"></div>
+
+<img class="ui centered image" src="img/6to7addition/add.png">
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('add6to7quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 6-7 YEARS ADDITION PANEL PANEL -->
+
+
+
+
+<!-- 8 YEARS ADDITION PANEL -->
+<section id="addition8yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>When you add the three digit numbers align digits of the same place value from the addends to the sum.</P>
+<div class="ui divider"></div>
+  EXAMPLE
+<div class="ui divider"></div>
+
+<img class="ui centered small image" src="img/6to8/10.png">
+<div class="ui divider"></div>
+
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('add8quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 8 YEARS ADDITION PANEL -->
+
+
+<!-- 8 YEARS SUBTRACTION PANEL -->
+<section id="subtraction8yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Subtraction is used to compare the number of elements of a set with the number of elements of another set.</P>
+<div class="ui divider"></div>
+  EXAMPLE
+<div class="ui divider"></div>
+1. Subtract the Ones.
+<div class="ui divider"></div>
+
+<img class="ui centered small image" src="img/6to8/11.png">
+1 – 2 = cannot be.
+<div class="ui divider"></div>
+Borrow 1 from 4 in the tens. Then add 10 to 1 in the ones place to become 11, then subtract 11 – 2 = 9.
+<div class="ui divider"></div>
+Subtract the tens:
+<div class="ui divider"></div>
+<img class="ui centered small image" src="img/6to8/12.png">
+Subtract the hundreds:
+<div class="ui divider"></div>
+<img class="ui centered small image" src="img/6to8/13.png">
+The final answer is <strong>219</strong>
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('sub8quiz','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 8 YEARS SUBTRACTION  PANEL -->
+
+
+<!-- 8 YEARS MULTIPLICATION PANEL -->
+<section id="multiplication8yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<P>Multiplication is a short way of combining equal groups or adding like addends.</P>
+<div class="ui divider"></div>
+  EXAMPLE
+<div class="ui divider"></div>
+<img class="ui centered large image" src="img/6to8/14.png">
+<div class="ui divider"></div>
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('multiplicationquiz8','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 8 YEARS MULTIPLICATION  PANEL -->
+
+
+
+<!-- 8 YEARS DIVISION PANEL -->
+<section id="division8yrsold_panel" class="ui container" style="padding-bottom: 80px;">
+
+<h2 class="ui center aligned  header">
+  <img class="ui image" src="image/open_book_96px.png">
+  <br>
+    Lesson
+</h2>
+
+<div class="ui divider"></div>
+<img class="ui centered large image" src="img/6to8/15.png">
+<div class="ui divider"></div>
+<P>15 heart are separated into groups of 3.</P>
+<div class="ui divider"></div>
+<P>There are 3 in each group.</P>
+<div class="ui divider"></div>
+<P>We write: 15   ÷   5 = 3</P>
+<div class="ui divider"></div>
+<div class="ui column centered grid" style="margin-left:-2px;">
+  <button class="massive red fluid ui button"onClick="gameload('divisionquiz8','Multiple Choice')">Take Quiz</button>
+</div>
+
+
+</section>
+<!-- 8 YEARS DIVISON  PANEL -->
+
+
+
+
+<!-- mathdroid footer -->
+       <footer class="ui red bottom attached label" id="footer" >
+               <p style="margin-top:.56em;font-size: 14px;font-family: Yu Gothic; color: white">© Mlimi 365 Labs</p>
+       </footer>
+<!-- mathdroid footer -->
+    
+</div>
+
+</body>
+</html>
